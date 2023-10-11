@@ -31,7 +31,7 @@ MENUPRINCIPAL= '''
 print(MENUPRINCIPAL)
 total=4000
 opcion = int(input("Dime que opción deseas elegir? "))
-while opcion !=4:
+while opcion <=4 and opcion !=4:
     if opcion == 1:
         alumnosEntrar = int(input("Cuantos alumnos van a entrar?: "))
         total+=alumnosEntrar
@@ -80,5 +80,14 @@ elif player1== "papel":
           resultado = f"el player 1 {player1} ha ganado a player 2 {player2}"
     else:
       resultado = f"el player 2 {player2} ha ganado a player 1 {player1}"
-
+elif player1 == "piedra":
+    if player2 == "tijera" or player2 == "lagarto":
+        resultado = f"el player 1 {player1} ha ganado a player 2 {player2}"
+    else:
+      resultado = f"el player 2 {player2} ha ganado a player 1 {player1}"
+elif player1 == "lagarto":
+    if player2 == "papel" or player2 =="Spock":
+        resultado = f"el player 1 {player1} ha ganado a player 2 {player2}"
+    else:
+      resultado = f"el player 2 {player2} ha ganado a player 1 {player1}"
 print(resultado)
