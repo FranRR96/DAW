@@ -87,11 +87,11 @@ centimos_50 = int(input("Cuantos euros son: "))
 centimos_20 = int(input("Cuantos euros son: "))
 centimos_10 = int(input("Cuantos euros son: "))
 
-totalEuros_2 = euros_2 * 2
+totalEuros = euros_2 *2 + euros_1
 
 centimos_totales = (centimos_10 * 10) + (centimos_20 * 20) + (centimos_50 * 50)
 
-print(f"Tienes {totalEuros_2} euros y {centimos_totales} centimos")
+print(f"Tienes {totalEuros} euros y {centimos_totales} centimos")
 
 
 """9. Realiza un algoritmo que calcule la potencia, para ello pide por teclado la base y el
@@ -103,9 +103,9 @@ exponente. Pueden ocurrir tres cosas:
 numero = float(input("Dime un nº: ",))
 exponente = float(input("Dime un nº: ",))
 if exponente > 0:
-    print(exponente)
+    print(pow(numero, exponente))
 elif exponente == 0:
-    print("1")
+    print(pow(numero, exponente))
 elif exponente < 0:
     resultado = 1 / pow(numero, abs(exponente))
     print(resultado)
@@ -228,48 +228,48 @@ tramoHorario = input("Dime que hora del dia es cuando habla: ")
 if minutos >1 and minutos <= 5:
     sumaDinero+=1
     if dia == "domingo":
-        sumaDinero+=0.03
-        print(sumaDinero)
-    elif tramoHorario== "tarde":
-        sumaDinero+=sumaDinero*10/100
-        print(sumaDinero)
-    elif tramoHorario == "mañana":
-        sumaDinero+=0.15
-        print(sumaDinero)
-
-elif minutos >5 and minutos <= 8:
-    sumaDinero+=1.80
-    if dia == "domingo":
-        sumaDinero+=0.03
-        print(sumaDinero)
-    elif tramoHorario== "tarde":
-        sumaDinero+=sumaDinero*10/100
-        print(sumaDinero)
-    elif tramoHorario == "mañana":
-        sumaDinero+=0.15
-        print(sumaDinero)
-
-elif minutos >8 and minutos <= 10:
-    sumaDinero+=2.50
-    if dia == "domingo":
-        sumaDinero+=0.03
-        print(sumaDinero)
-    elif tramoHorario== "tarde":
-        sumaDinero+=sumaDinero*10/100
-        print(sumaDinero)
-    elif tramoHorario == "mañana":
-        sumaDinero+=0.15
-        print(sumaDinero)
-else:
-    sumaDinero+=3
-    if dia == "domingo":
-        sumaDinero+=0.03
+        sumaDinero+=sumaDinero*0.03
         print(sumaDinero)
     elif tramoHorario== "tarde":
         sumaDinero+=sumaDinero*0.10
         print(sumaDinero)
     elif tramoHorario == "mañana":
-        sumaDinero+=0.15
+        sumaDinero+=sumaDinero*0.15
+        print(sumaDinero)
+
+elif minutos >5 and minutos <= 8:
+    sumaDinero+=1.80
+    if dia == "domingo":
+        sumaDinero+=sumaDinero*0.03
+        print(sumaDinero)
+    elif tramoHorario== "tarde":
+        sumaDinero+=sumaDinero*0.10
+        print(sumaDinero)
+    elif tramoHorario == "mañana":
+        sumaDinero+=sumaDinero*0.15
+        print(sumaDinero)
+
+elif minutos >8 and minutos <= 10:
+    sumaDinero+=2.50
+    if dia == "domingo":
+        sumaDinero+=sumaDinero*0.03
+        print(sumaDinero)
+    elif tramoHorario== "tarde":
+        sumaDinero+=sumaDinero*0.10
+        print(sumaDinero)
+    elif tramoHorario == "mañana":
+        sumaDinero+=sumaDinero*0.15
+        print(sumaDinero)
+else:
+    sumaDinero+=3
+    if dia == "domingo":
+        sumaDinero+=sumaDinero*0.03
+        print(sumaDinero)
+    elif tramoHorario== "tarde":
+        sumaDinero+=sumaDinero*0.10
+        print(sumaDinero)
+    elif tramoHorario == "mañana":
+        sumaDinero+=sumaDinero*0.15
         print(sumaDinero)
 
 
@@ -277,16 +277,56 @@ else:
 correspondiente. Si introducimos otro número nos da un error"""
 
 
+numeroDiaSemana = int(input("Dime un nº del 1 al 7: "))
 
-
-
-
-
-
+if numeroDiaSemana == 1:
+    print("El dia elegido es Lunes.")
+elif numeroDiaSemana == 2:
+    print("El numero elegido es Martes.")
+elif numeroDiaSemana == 3:
+    print("El numero elegido es Miercoles.")
+elif numeroDiaSemana == 4:
+    print("El numero elegido es Jueves.")
+elif numeroDiaSemana == 5:
+    print("El numero elegido es Viernes.")
+elif numeroDiaSemana == 6:
+    print("El numero elegido es Sábado.")
+elif numeroDiaSemana == 7:
+    print("El numero elegido es Domingo.")
+else:
+    print("Error")
 
 """16. Escribe un programa que pida un número entero entre uno y doce e imprima el número de
 días que tiene el mes correspondiente"""
 
+mes = int(input("Dime un numero del mes."))
+
+if mes == 1:
+    print("El mes tiene 31 días")
+elif mes == 2:
+    print("El mes tiene 28 dias.")
+elif mes == 3:
+    print("El mes tiene 31 dias.")
+elif mes == 4:
+    print("El mes tiene 30 dias.")
+elif mes == 5:
+    print("El mes tiene 31 dias.")
+elif mes == 6:
+    print("El mes tiene 30 dias.")
+elif mes == 7:
+    print("El mes tiene 31 dias.")
+elif mes == 8:
+    print("El mes tiene 31 dias.")
+elif mes == 9:
+    print("El mes tiene 30 dias.")
+elif mes == 10:
+    print("El mes tiene 31 dias.")
+elif mes == 11:
+    print("El mes tiene 30 dias.")
+elif mes == 12:
+    print("El mes tiene 31 dias.")
+else:
+    print("Error")
 
 
 
@@ -294,6 +334,15 @@ días que tiene el mes correspondiente"""
 pidan al usuario"""
 
 
+
+numero_1 = int(input("Dime un numero: "))
+numero_2 = int(input("Dime un numero: "))
+
+for i in range(numero_1, numero_2+1):
+    if i %2==0:
+        print(f"Este numero {i} es par.")
+    else:
+        print(f"Este numero {i} es impar.")
 
 
 """18. Escribe un programa que pida el limite inferior y superior de un intervalo. Si el límite
@@ -325,7 +374,8 @@ while numero != 0:
     else:
         fuera+=1
 print(f"La suma de los números dentro del intervalo es: {suma_intervalo}")
-
+print(f"Los numeros fuera del intervalo son: {fuera}")
+print(f"Hay {coincide} que coincide o coinciden.")
 
 """19. Escribe un programa que dados dos números, uno real (base) y un entero positivo
 (exponente), saque por pantalla el resultado de la potencia. No se puede utilizar el operador
@@ -359,5 +409,17 @@ for i in range(1,20):
 
 """21. Mostrar en pantalla los N primero número primos. Se pide por teclado la cantidad de
 números primos que queremos mostrar"""
+
+
+#Esta actividad no he podido resolverla Jose Manuel.
+
+numero = int(input("Dime que numero vas a utilizar: "))
+
+for i in range(2,numero):
+    if numero % i ==0:
+        print(f"el nº {i} es primo")
+    else:
+        print(f"el nº {i} no es primo.")
+
 
 
