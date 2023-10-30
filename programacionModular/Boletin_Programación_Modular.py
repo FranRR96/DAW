@@ -141,10 +141,15 @@ print(f"El número mayor es {mayor}")
 contenido sea igual a la original pero invertida. 
 Así, dada la lista [Di, buen, día, a, papa], deberá devolver [papa, a, día, buen, Di]."""
 
-lista_Reversa= ["Di", "buen", "dia", "a", "papa"]
+def reversalista(lista):
+    reversa_lista = []
+    for i in range(len(lista)-1, -1, -1):
+        reversa_lista.append(lista[i])
+    return reversa_lista
 
-lista_Reversa.reverse()
-print(lista_Reversa)
+original_lista = ["Di", "buen", "día", "a", "papa"]
+reversa_lista = reversalista(original_lista)
+print(reversa_lista)
 
 
 """6. Diseña una función llamada estaOrdenada que reciba una lista de elementos y
