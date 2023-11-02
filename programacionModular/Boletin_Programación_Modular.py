@@ -141,16 +141,15 @@ print(f"El número mayor es {mayor}")
 contenido sea igual a la original pero invertida. 
 Así, dada la lista [Di, buen, día, a, papa], deberá devolver [papa, a, día, buen, Di]."""
 
-def reversalista(lista):
+def revertir(lista):
     reversa_lista = []
     for i in range(len(lista)-1, -1, -1):
         reversa_lista.append(lista[i])
     return reversa_lista
 
 original_lista = ["Di", "buen", "día", "a", "papa"]
-reversa_lista = reversalista(original_lista)
+reversa_lista = revertir(original_lista)
 print(reversa_lista)
-
 
 """6. Diseña una función llamada estaOrdenada que reciba una lista de elementos y
 devuelva True si está ordenada o False en caso contrario."""
@@ -173,3 +172,59 @@ encajan o no. Las fichas son recibidas en dos cadenas de texto con el siguiente
 formato
 [3,4] [2,5]"""
 
+def encajan(ficha1, ficha2):
+    numero1 = int(ficha1[1])
+    numero2 = int(ficha1[3])
+    numero3 = int(ficha2[1])
+    numero4 = int(ficha2[3])
+    
+    if numero1 == numero3 or numero1 == numero4 or numero2 == numero3 or numero2 == numero4:
+        return True
+    else:
+        return False
+
+
+
+ficha1 = "[3,5]"
+ficha2 = "[2,4]"
+if encajan(ficha1, ficha2):
+    print("Las fichas encajan")
+else:
+    print("Las fichas no encajan")
+
+
+"""8. Realiza un programa que añada números enteros a una lista hasta que se introduzca un número negativo. 
+Haciendo uso de esta lista, elabora funciones que devuelvan:
+
+a. una lista con todos los que sean primos.
+b. el sumatorio
+c. el promedio de los valores.
+d. una lista con el factorial de cada uno de esos números."""
+
+
+"""a"""
+
+def es_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def obtener_numeros_primos():
+    numeros = []
+    num = int(input("Ingresa un número entero (negativo para detener): "))
+    while num >= 0:
+        numeros.append(num)
+        num = int(input("Ingresa un número entero (negativo para detener): "))
+    
+    primos = []
+    for num in numeros:
+        if es_primo(num):
+            primos.append(num)
+    
+    return primos
+
+numeros_primos = obtener_numeros_primos()
+print("Números primos:", numeros_primos)
